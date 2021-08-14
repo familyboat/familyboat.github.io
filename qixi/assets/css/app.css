@@ -1,0 +1,66 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  display: flex;
+  flex-direction: row;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#app > #left > img {
+  height: 100vh;
+}
+
+#app > #right {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+
+  min-width: 600px;
+  padding: 0 30px;
+}
+
+#app > #right > .title-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#app > #right > .title-section > .title {
+  display: inline-block;
+  max-width: 250px;
+  position: relative;
+
+  font-size: 30px;
+}
+
+#app > #right > .title-section > .title > .author {
+  position: absolute;
+  top: 100%;
+  right: 0;
+
+  font-size: initial;
+}
+
+#app > #right > .content-section {
+  font-size: 16px;
+  text-indent: 2em;
+}
+
+@media  screen and (max-width: 560px) {
+  #app {
+    flex-direction: column;
+  }
+
+  #app > #left > img {
+    height: initial;
+    width: 100vw;
+  }
+
+  #app > #right {
+    min-width: auto;
+  }
+
+}
