@@ -1,0 +1,14 @@
+/* app级别的布局 */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* app级别的表现 */
+html {
+  font-size: 12px;
+}

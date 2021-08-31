@@ -1,0 +1,17 @@
+@import '../assets/css/event.card.css';
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+}
+
+#app {
+  padding: 0 2em;
+}
+
+#app > .card {
+  margin-bottom: 2em;
+}

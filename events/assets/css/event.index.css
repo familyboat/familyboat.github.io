@@ -1,0 +1,14 @@
+@import './event.event-set.css';
+@import './app.css';
+
+.event-index-app {
+  background-color: black;
+
+  border-left: 2em solid blueviolet;
+}
+
+.event-index-app > .event-set {
+  background-color: white;
+
+  margin-bottom: 2em;
+}

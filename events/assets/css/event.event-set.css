@@ -1,0 +1,29 @@
+@import './event.card.css';
+
+.event-set {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  padding: 1em 2em;
+  
+  border: 1px solid black;
+
+  overflow-x: auto;
+}
+
+.event-set > .primary-key {
+  margin: 0;
+}
+
+.event-set > .event {
+  flex: 0 0 100%;
+  width: 100%;
+
+  margin-left: 2em;
+}
+
+.event-set > .event > a {
+  text-decoration: none;
+  color: black;
+}
