@@ -1,1 +1,7 @@
-@import './event.card.css';
+@import '../../component/event.card.css';
+@import './app.css';
+
+#app {
+  max-width: 560px;
+  margin: 0 auto;
+}

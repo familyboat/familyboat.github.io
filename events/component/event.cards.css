@@ -1,6 +1,6 @@
 @import './event.card.css';
 
-.event-set {
+.cards {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -12,18 +12,18 @@
   overflow-x: auto;
 }
 
-.event-set > .primary-key {
+.cards > .primary-key {
   margin: 0;
 }
 
-.event-set > .event {
+.cards > dt {
   flex: 0 0 100%;
   width: 100%;
 
   margin-left: 2em;
 }
 
-.event-set > .event > a {
+.cards > dt > a {
   text-decoration: none;
   color: black;
 }
