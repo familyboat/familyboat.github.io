@@ -3,23 +3,48 @@
 
   component cards
 */
-import buildCard from './event.card.js';
+import { EventCard } from './event.card.js';
 import { DETAILPATH } from '../assets/javascript/event.constant.js';
 
-const cardsTemplate = `
-  <dl class="cards">
-    <dd class="primary-key">{{primaryKey}}</dd>
-    {{cards}}
-  </dl>
-`
+const e = React.createElement;
 
-function buildCards(pk, cards) {
-  var primaryKey = pk,
-    cardsContent = cards.map(card => `<dt><a href="${DETAILPATH + '?' + card.id}">${buildCard(card, 'l2r')}</a></dt>`)
-      .join('\n');
+export const EventCards = ({
+  cards,
+  pk,
+  style = {},
+  ...porps
+}) => {
+  const component = 'dl';
+  const className = 'event-cards';
 
-  return cardsTemplate.replace('{{primaryKey}}', primaryKey)
-    .replace('{{cards}}', cardsContent);
-}
-
-export default buildCards;
+  return e(
+    component,
+    {
+      className,
+      style,
+    },
+    e(
+      'dd',
+      {className: 'primary-key'},
+      pk,
+    ),
+    ...cards.map(card => e(
+      'dt',
+      null,
+      e(
+        'a',
+        {
+          href: `${DETAILPATH + '?' + card.id}`,
+        },
+        e(
+          EventCard,
+          {
+            isExpand: false,
+            ...card
+          },
+          null,
+        )
+      ),
+    ))
+  );
+};

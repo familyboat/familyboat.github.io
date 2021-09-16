@@ -3,9 +3,9 @@
 
   test
 */
+import { EventCard } from "./event.card.js";
 
-import buildCard from "./event.card.js";
-import { mount } from "../assets/javascript/event.util.js";
+const e = React.createElement;
 
 const card = {
   "id": 1,
@@ -26,5 +26,25 @@ const card = {
     "希望你快点走出来。"]
 };
 
-mount('#t2b', buildCard(card, 't2b'));
-mount('#l2r', buildCard(card, 'l2r'));
+ReactDOM.render(
+  e(
+    EventCard,
+    {
+      style: {'max-width': '560px', 'margin': '0 auto'},
+      ...card
+    },
+    null,
+  ), 
+  document.querySelector('#t2b'));
+
+ReactDOM.render(
+  e(
+    EventCard,
+    {
+      isExpand: false,
+      style: {'maxWidth': '560px', 'margin': '0 auto'},
+      ...card
+    },
+    null,
+  ), 
+  document.querySelector('#l2r'));

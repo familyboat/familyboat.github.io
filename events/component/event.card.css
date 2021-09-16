@@ -1,106 +1,18 @@
-/* 第一种设计方案：上下结构 */
-  /* 不论屏幕尺寸大小如何，均采用上下结构的设计理念。 */
-  /* 上下结构用于单篇文章，即detail部分 */
-  .card.t2b {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* 第一节内容的布局 */
-  .card.t2b > section:first-child > img {
-    width: 100%;
-    height: 100%;
-  
-    object-fit: cover;
-  
-    border-top-left-radius: 1em;
-    border-top-right-radius: 1em;
-  }
-  
-  /* 第二节内容的布局 */
-  .card.t2b > section:last-child {
-    display: flex;
-    flex-direction: column;
-  
-    padding: 0 2em;
-  
-    border: 1px solid black;
-    border-top-width: 0;
-    border-bottom-left-radius: 1em;
-    border-bottom-right-radius: 1em;
-  }
-  /* 第一种设计方案结束 */
-    
-  /* 第二种设计方案：左右结构 */
-    /* 不论屏幕尺寸大小如何，均采用左右结构的设计理念。 */
-    /* 左右结构，用于文章列表，即list部分 */
-  .card.l2r {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  /* 第一节内容的布局 */
-  .card.l2r > section:first-child {
-    flex: 0 0 40%;
-  }
-  
-  .card.l2r > section:first-child > img {
-    width: 100%;
-    height: 100%;
-  
-    object-fit: cover;
-  
-    border-top-left-radius: 1em;
-    border-bottom-left-radius: 1em;
-  }
-  
-  /* 第二节内容的布局 */
-  .card.l2r > section:last-child {
-    display: flex;
-    flex-direction: column;
-  
-    flex: 0 0 60%;
-    width: 60%;
-    padding: 0 2em;
-  
-    border: 1px solid black;
-    border-left-width: 0;
-    border-top-right-radius: 1em;
-    border-bottom-right-radius: 1em;
-  }
-  
-  
-  
-  /* 表现部分 */
-  
-  /* 共同部分 */
-  .card > section:last-child > header {
-    text-align: center;
-  }
-  
-  /* 第一种设计方案 */
-  .card.t2b > section:last-child > header > h1 {
-    font-size: 3rem;
-  }
-  
-  .card.t2b > section:last-child > section > p {
-    font-size: 1.333rem;
-    line-height: 1.5;
-    text-indent: 2em;
-  
-    white-space: pre-line;
-  }
-  
-  /* 第二种设计方案 */
-  .card.l2r > section:last-child > header > h1 {
-    font-size: 1.5rem;
-  }
-  
-  .card.l2r > section:last-child > section > p {
-    font-size: 1rem;
-    line-height: 1.5;
-  
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+@import './carousel.css';
+@import './article.css';
+
+/* default */
+.event-card {
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  border: 1px solid black;
+  border-radius: 1em;
+}
+
+/* unexpand */
+.event-card.unexpand {
+  flex-direction: row;
+}

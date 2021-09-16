@@ -3,9 +3,9 @@
 
   test
 */
-import buildCards from "./event.cards.js";
-import { mount } from "../assets/javascript/event.util.js";
+import { EventCards } from "./event.cards.js";
 
+const e = React.createElement;
 const cards = [
   {"id": 1,
   "topic": "随笔",
@@ -41,4 +41,16 @@ const cards = [
       "希望你快点走出来。"]}
 ];
 
-mount('#app', buildCards('2021-9-1', cards));
+// mount('#app', buildCards('2021-9-1', cards));
+ReactDOM.render(
+  e(
+    EventCards,
+    {
+      cards,
+      style: {'maxWidth': '560px', 'margin': '0 auto'},
+      pk: '2021-9-1',
+    },
+    null,
+  ),
+  document.querySelector('#app'),
+);
