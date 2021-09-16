@@ -3,7 +3,7 @@
 
   constant
 */
-export const ROOTPATH = '/familyboat/events/';
+export const ROOTPATH = '/events/';
 
 export const IMAGEPATH = `${ROOTPATH}assets/image/`;
 
