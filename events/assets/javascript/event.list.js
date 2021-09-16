@@ -1,19 +1,35 @@
 import { filter, group } from './event.util.js';
-import buildCards from '../../component/event.cards.js';
-import { mount } from './event.util.js';
+import { EventCards } from '../../component/event.cards.js';
 import {RESOURCEPATH} from './event.constant.js';
 
-async function worker (url, filterKey, filterValue, primaryKey, dom) {
-  var response = await fetch(url);
-  var data = await response.json();
-  var cards = data['events'];
-  var cardsObj = group(cards, primaryKey);
+const e = React.createElement;
 
-  var result = '';
-  for (let pk in cardsObj) {
-    result += buildCards(pk, cardsObj[pk]);
+async function worker (url, filterKey, filterValue, primaryKey, dom) {
+  let response = await fetch(url);
+  let data = await response.json();
+  let cards = data['events'];
+  let cardsObj = group(cards, primaryKey);
+  let eventcards = [];
+
+  for (let [pk, cards] of Object.entries(cardsObj)) {
+    eventcards.push(e(
+      EventCards,
+      {
+        cards,
+        pk,
+      },
+      null,
+    ))
   }
-  mount(dom, result);
+  
+  ReactDOM.render(
+    e(
+      React.Fragment,
+      null,
+      ...eventcards
+    ),
+    document.querySelector(dom),
+  )
 }
 
 let primaryKey = 'date'

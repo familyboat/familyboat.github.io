@@ -1,14 +1,23 @@
 import { filter } from './event.util.js';
-import buildCard from '../../component/event.card.js';
-import { mount } from './event.util.js';
+import { EventCard } from '../../component/event.card.js';
 import {RESOURCEPATH} from './event.constant.js';
+
+const e = React.createElement;
 
 async function worker (url, filterKey, filterValue, dom) {
   var response = await fetch(url);
   var data = await response.json();
   var cards = data['events'];
   var card = filter(cards, filterKey, filterValue);
-  mount(dom, buildCard(card, 't2b'));
+  
+  ReactDOM.render(
+    e(
+      EventCard,
+      {...card[0]},
+      null,
+    ),
+    document.querySelector(dom),
+  )
 }
 
 let filterKey = 'id';
