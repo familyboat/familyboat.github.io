@@ -9,19 +9,27 @@ import { DETAILPATH } from '../assets/javascript/event.constant.js';
 const e = React.createElement;
 
 export const EventCards = ({
-  cards,
-  pk,
+  /* EventCards组件的基组件 */
+  component = 'div',
+  /* EventCards组件的额外的类 */
+  classname = '',
+  /* EventCards组件的cards属性 */
+  cards = [],
+  /* EventCards组件的pk属性 */
+  pk = '',
+  /* EventCards组件的额外的样式 */
   style = {},
   ...porps
 }) => {
-  const component = 'dl';
-  const className = 'event-cards';
+  const Component = component;
+  const className = `event-cards ${classname}`;
 
   return e(
-    component,
+    Component,
     {
       className,
       style,
+      ...porps
     },
     e(
       'dd',
@@ -39,7 +47,7 @@ export const EventCards = ({
         e(
           EventCard,
           {
-            isExpand: false,
+            isExpandable: false,
             ...card
           },
           null,

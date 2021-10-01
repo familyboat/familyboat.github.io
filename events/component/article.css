@@ -21,17 +21,17 @@
   white-space: pre-line;
 }
 
-/* unexpand */
-.article.unexpand { 
+/* unexpandable */
+.article.unexpandable { 
   flex: 0 0 60%;
   width: 60%;
 }
 
-.article.unexpand > h1 {
+.article.unexpandable > h1 {
   font-size: 1.5rem;
 }
 
-.article.unexpand > p {
+.article.unexpandable > p {
   font-size: 1rem;
   line-height: 1.5;
 

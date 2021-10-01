@@ -5,6 +5,6 @@
   object-fit: cover;
 }
 
-.carousel.unexpand {
+.carousel.unexpandable {
   flex: 0 0 40%;
 }

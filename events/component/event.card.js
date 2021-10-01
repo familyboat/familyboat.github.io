@@ -9,45 +9,45 @@ import { Carousel } from "./carousel.js";
 const e = React.createElement;
 
 export const EventCard = ({
-  photos,
-  alt,
-  title,
-  author,
-  paragraphs,
-  date,
-  time,
-  isExpand = true,
+  /* EventCard组件的基组件 */
+  component = 'div',
+  /* EventCard组件的额外的类 */
+  classname = '',
+  /* EventCard组件是否展开 */
+  isExpandable = true,
+  /* EventCard组件的额外的样式 */
+  style = {},
   ...props
 }) => {
-  const component = 'div';
-  const className = isExpand ? 'event-card' : 'event-card unexpand';
+  const Component = component;
+  const className = isExpandable ? 
+    `event-card ${classname}` : 
+    `event-card unexpandable ${classname}`;
+  const { photos, alt, ...rest } = props;
+
   const carousel = e(
     Carousel,
     {
       images: photos,
       alt,
-      isExpand,
+      isExpandable,
     },
     null,
   );
   const article = e(
     Article,
     {
-      title,
-      author,
-      paragraphs,
-      date,
-      time,
-      isExpand,
+      isExpandable,
+      ...rest
     },
     null,
   );
 
   return e(
-    component,
+    Component,
     {
       className,
-      ['style']: props.style,
+      style,
     },
     carousel,
     article,

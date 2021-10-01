@@ -10,9 +10,11 @@
 
   border: 1px solid black;
   border-radius: 1em;
+
+  background-color: white;
 }
 
 /* unexpand */
-.event-card.unexpand {
+.event-card.unexpandable {
   flex-direction: row;
 }

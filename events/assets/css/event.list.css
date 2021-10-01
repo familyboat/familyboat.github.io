@@ -1,8 +1,15 @@
 @import '../../component/event.cards.css';
 @import './app.css';
 
+* {
+  box-shadow: var(--fb-global--BoxShadow--inset);
+
+  border-color: var(--fb-global--BorderColor--light-100);
+}
+
 #app {
-  background-color: black;
+  /* background-color: black; */
+  background-color: var(--fb-global--BackgroundColor--200);
 
   border-left: 2em solid blueviolet;
 
@@ -11,7 +18,5 @@
 }
 
 #app > .event-cards {
-  background-color: white;
-
   margin-bottom: 2em;
 }

@@ -1,0 +1,101 @@
+/* 
+  flex base:
+    display:
+      flex,
+      inline-flex,
+    
+    flex-direction:
+      row,
+      row-reverse,
+      column,
+      column-reverse,
+    
+    flex-wrap:
+      nowrap,
+      wrap,
+      wrap-reverse
+    
+    align-items:
+      stretch,
+      center,
+      flex-start,
+      flex-end,
+      baseline,
+    
+    justify-content:
+      stretch,
+      space-between,
+      space-around,
+      center,
+      flex-start,
+      flex-end,
+      baseline,
+
+    align-content:
+      stretch,
+      space-between,
+      space-around,
+      center,
+      flex-start,
+      flex-end,
+      baseline,
+
+  flex item
+    flex-grow:
+      <number>
+
+    flex-shrink:
+      <number>
+
+    flex-basis:
+
+    align-self:
+      stretch,
+      center,
+      flex-start,
+      flex-end,
+      baseline,
+
+    order:
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+form {
+  width: 70%;
+  margin: 0 auto 20px;
+}
+
+form label i {
+  display: inline-block;
+  width: 15%;
+  text-align: left;
+}
+
+form label i::after {
+  content: ':';
+}
+
+#flex-container {
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
+  padding: 12px 20px;
+
+  background-color: wheat;
+  border: 3px solid black;  
+}
+
+#flex-container > * {
+  border: 1px solid green;
+}
