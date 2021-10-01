@@ -76,6 +76,10 @@ form {
   margin: 0 auto 20px;
 }
 
+form label {
+  display: block;
+}
+
 form label i {
   display: inline-block;
   width: 15%;
