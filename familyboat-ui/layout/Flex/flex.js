@@ -26,7 +26,7 @@ window.addEventListener('load', () => {
 
     for(var pair of formdata.entries()) {
       if (pair[0] == 'content') {
-        newFlexItem.innerText = pair[1] || 'hello, world';
+        newFlexItem.innerHTML = pair[1] || 'hello, world';
       } else if (pair[0] == 'flex-grow' || 'flex-shrink'){
         newFlexItem.style[pair[0]] = pair[1] || 0;
       } else {
